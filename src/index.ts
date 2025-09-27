@@ -1,20 +1,8 @@
-import express, { Request, Response } from "express";
 import chalk from "chalk";
-
-const app = express();
+import { app } from "./app.js";
 
 const AUTH_HOST = process.env?.["HOST"] || "localhost";
 const AUTH_PORT = Number(process.env?.["PORT"]) || 3001;
-
-// Health check
-app.get("/health", (_: Request, res: Response) => {
-  res.send({
-    statusCode: "200",
-    service: "QEET AUTH SERVICE",
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime(),
-  });
-});
 
 app.listen(AUTH_PORT, AUTH_HOST, () => {
   console.log(
