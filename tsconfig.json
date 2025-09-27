@@ -26,6 +26,11 @@
     "allowArbitraryExtensions": true,
     "allowImportingTsExtensions": false,
     "baseUrl": ".",
+    "paths": {
+      "@controllers/*": ["src/controllers/*"],
+      "@services/*": ["src/services/*"],
+      "@routes/*": ["src/routes/*"]
+    },
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
